@@ -16,7 +16,7 @@ async function createFile(filePath) {
     }
 }
 
-async function deleteFile(filePath) {
+async function removeFile(filePath) {
     try {
         await fs.unlink(filePath);
         logger.filesystem(`Deleted file at: ${filePath}`);
