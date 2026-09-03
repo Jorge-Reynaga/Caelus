@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 
+import AppError from '../utils/app-error.js';
 import logger from '../utils/logger.js';
 
 async function createFile(filePath) {
@@ -9,9 +10,9 @@ async function createFile(filePath) {
         logger.filesystem(`Created file at: ${filePath}`);
     } catch (error) {
         if (error.code === "EEXIST") {
-            logger.error(`File already exists at: ${filePath}`);
+            throw new AppError(`File already exists at: ${filePath}`, 409);
         } else {
-            logger.error(`Couldn't create file at: ${filePath}`);
+            throw new AppError(`Couldn't create file at: ${filePath}`, 500);
         }
     }
 }
@@ -23,13 +24,11 @@ async function removeFile(filePath) {
     } catch (error) {
         switch (error.code) {
             case "ENOENT":
-                logger.error(`No such file at: ${filePath}`);
-                break;
+                throw new AppError(`No such file at: ${filePath}`, 404);
             case "EISDIR":
-                logger.error(`The specified file is a directory at: ${filePath}`);
-                break;
+                throw new AppError(`The specified file is a directory at: ${filePath}`, 409);
             default:
-                logger.error(`Couldn't delete file at: ${filePath}`);
+                throw new AppError(`Couldn't delete file at: ${filePath}`, 500);
         }
     }
 }
