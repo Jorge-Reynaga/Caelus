@@ -33,3 +33,8 @@ async function removeFile(filePath) {
         }
     }
 }
+
+export {
+    createFile, 
+    removeFile
+};
