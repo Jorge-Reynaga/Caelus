@@ -11,3 +11,5 @@ async function deleteFile(req, res) {
     await removeFile(filePath);
     res.status(200).json({ message: "File deleted successfully" });
 }
+
+export { deleteFile };
