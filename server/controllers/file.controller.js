@@ -2,7 +2,7 @@ import AppError from '../utils/app-error.js';
 
 import { createFile, removeFile } from '../services/file.service.js';
 
-async function deleteFile(req, res) {
+async function deleteFile(req, res, next) {
     const { path: filePath } = req.query;
 
     if (!filePath) {

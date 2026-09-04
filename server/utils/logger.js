@@ -1,6 +1,6 @@
 import { styleText } from 'node:util';
 
-export default logger = {
+const logger = {
     filesystem: function (message) {
         console.log(styleText("blue", `[FILESYSTEM] ${message}`));
     },
@@ -14,3 +14,5 @@ export default logger = {
         console.log(styleText("yellow", `[HTTP] ${message}`));
     }
 };
+
+export default logger;
