@@ -1,5 +1,6 @@
 import Sidebar from './components/Sidebar'
 import MainPanel from './components/MainPanel'
+import DetailsPanel from './components/DetailsPanel'
 
 import './index.css'
 
@@ -8,6 +9,7 @@ function App() {
     <div className="flex">
       <Sidebar></Sidebar>
       <MainPanel></MainPanel>
+      <DetailsPanel></DetailsPanel>
     </div>
   )
 }
