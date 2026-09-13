@@ -5,10 +5,10 @@ import './index.css'
 
 function App() {
   return (
-    <>
+    <div className="flex">
       <Sidebar></Sidebar>
       <MainPanel></MainPanel>
-    </>
+    </div>
   )
 }
 

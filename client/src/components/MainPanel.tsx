@@ -1,6 +1,6 @@
 function MainPanel() {
   return (
-    <div className="h-dvh bg-[#3F3F3F]">
+    <div className="flex-1 h-dvh bg-[#3F3F3F]">
     </div>
   )
 }
