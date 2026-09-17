@@ -6,6 +6,8 @@ import Toolbar from './components/Toolbar'
 import AddressBar from './components/AddressBar'
 import NewButton from './components/NewButton'
 
+import Modal from './components/Modal'
+
 import './index.css'
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
         </Toolbar>
       </MainPanel>
       <DetailsPanel></DetailsPanel>
+      <Modal></Modal>
     </div>
   )
 }
