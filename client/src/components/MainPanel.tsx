@@ -6,7 +6,11 @@ interface MainPanelProps {
 
 function MainPanel({ children }: MainPanelProps) {
   return (
-    <main className="flex-1 h-dvh bg-[#3F3F3F]">
+    <main className={`
+      flex-1 
+      h-dvh
+      bg-[#3F3F3F]
+    `}>
       {children}
     </main>
   )

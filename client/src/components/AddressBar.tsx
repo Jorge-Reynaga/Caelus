@@ -4,7 +4,12 @@ interface AddressBarProps {
 
 function AddressBar({ className = "" }: AddressBarProps) {
   return (
-    <div className={`bg-[#4C4C4C] w-full h-12 rounded-2xl shadow-lg ${className}`}>
+    <div className={`
+      w-full h-12
+      bg-[#4C4C4C]
+      rounded-2xl shadow-lg 
+      ${className}
+    `}>
     </div>
   )
 }
