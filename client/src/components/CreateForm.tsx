@@ -1,6 +1,19 @@
+import { useState } from "react"
+
 function CreateForm() {
+  const [formData, setFormData] = useState({name: "", type: "Directory"});
+
+  function handleChange(event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+    const { name, value } = event.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
+    event.preventDefault();
+  };
+  
   return (
-    <form className="flex flex-wrap w-full">
+    <form className="flex flex-wrap w-full" onSubmit={handleSubmit}>
       <div className={`
         flex 
         w-full
@@ -21,7 +34,7 @@ function CreateForm() {
           text-[18px] text-[#FFFFFF] 
           rounded-2xl shadow-lg 
           focus:outline-0
-        `} type="text" />
+        `} type="text" name="name" value={formData.name} onChange={handleChange} />
       </div>
 
       <div className={`
@@ -43,8 +56,9 @@ function CreateForm() {
           pl-4 pr-4 bg-[#4C4C4C] 
           text-[18px] text-[#FFFFFF]
           rounded-2xl shadow-lg
-        `}>
+        `} name="type" value={formData.type} onChange={handleChange}>
           <option value="Directory">Directory</option>
+          <option value="Text file">Text file</option>
         </select>
       </div>
 
