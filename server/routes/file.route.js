@@ -1,9 +1,9 @@
 import express from 'express';
 
-import { deleteFile } from '../controllers/file.controller.js';
+import { postFile, deleteFile} from '../controllers/file.controller.js';
 
 const router = express.Router();
 
-router.route("/").delete(deleteFile);
+router.route("/").post(postFile).delete(deleteFile);
 
 export default router;

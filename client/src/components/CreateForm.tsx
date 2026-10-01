@@ -13,7 +13,7 @@ function CreateForm() {
 
     const params = new URLSearchParams(formData);
 
-    await fetch(`/api/file?${params}`, {
+    await fetch(`http://localhost:3000/api/file?${params}`, {
       method: "POST",
     });
   };
