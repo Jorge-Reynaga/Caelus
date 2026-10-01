@@ -8,8 +8,14 @@ function CreateForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    const params = new URLSearchParams(formData);
+
+    await fetch(`/api/file?${params}`, {
+      method: "POST",
+    });
   };
   
   return (
@@ -34,7 +40,7 @@ function CreateForm() {
           text-[18px] text-[#FFFFFF] 
           rounded-2xl shadow-lg 
           focus:outline-0
-        `} type="text" name="name" value={formData.name} onChange={handleChange} />
+        `} type="text" name="name" value={formData.name} onChange={handleChange} required />
       </div>
 
       <div className={`
