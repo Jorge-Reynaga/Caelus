@@ -5,7 +5,12 @@ import UploadForm from "./UploadForm"
 
 type Tab = "create" | "upload"
 
-function Modal() {
+interface ModalProps {
+  open: boolean
+  onCloseModal: () => void
+}
+
+function Modal({ open, onCloseModal }: ModalProps) {
   const [tab, setTab] = useState<Tab>("create");
 
   return (
@@ -14,7 +19,10 @@ function Modal() {
       fixed h-dvh w-full
       bg-[#000000]/50
       items-center justify-center
-      transition-opacity
+      transition-opacity duration-500
+      ${
+        open == true ? "visible opacity-100" : "invisible opacity-0"
+      }
     `}>
       <div className={`
         flex flex-col
@@ -54,7 +62,7 @@ function Modal() {
           border-t-2 border-[#4C4C4C]
         `} />
         
-        {tab === "create" ? <CreateForm /> : <UploadForm />}
+        {tab === "create" ? <CreateForm onCloseModal={onCloseModal}/> : <UploadForm onCloseModal={onCloseModal} />}
       </div>
     </div>
   )

@@ -1,6 +1,10 @@
 import { useState } from "react"
 
-function CreateForm() {
+interface CreateFormProps {
+  onCloseModal: () => void
+}
+
+function CreateForm({ onCloseModal }: CreateFormProps) {
   const [formData, setFormData] = useState({name: "", type: "Directory"});
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
@@ -77,7 +81,7 @@ function CreateForm() {
           text-[18px] text-[#FFFFFF]
           rounded-2xl shadow-lg 
           cursor-pointer
-        `}>
+        `} onClick={onCloseModal}>
           <span>Cancel</span>
         </button>
 

@@ -1,6 +1,10 @@
 import folderMuted from "../assets/icons/folder-muted.svg"
 
-function UploadForm() {
+interface UploadFormProps {
+  onCloseModal: () => void
+}
+
+function UploadForm({ onCloseModal }: UploadFormProps) {
   return (
     <form className={`
       flex flex-col flex-1 
@@ -29,7 +33,7 @@ function UploadForm() {
           text-[18px] text-[#FFFFFF]
           rounded-2xl shadow-lg 
           cursor-pointer
-        `}>
+        `} onClick={onCloseModal}>
           <span>Cancel</span>
         </button>
 
