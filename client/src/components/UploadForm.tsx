@@ -1,9 +1,19 @@
-import folderMuted from "../assets/folder-muted.svg"
+import folderMuted from "../assets/icons/folder-muted.svg"
 
 function UploadForm() {
   return (
-    <form className="flex flex-wrap w-full justify-center mt-4" onSubmit={undefined}>
-      <button type="button" className="w-72 flex flex-wrap justify-center border-dashed border-4 border-[#4C4C4C] p-4">
+    <form className={`
+      flex flex-col flex-1 
+      items-center 
+      mt-4
+    `} onSubmit={undefined}>
+      <button type="button" className={`
+        flex flex-1 flex-wrap
+        w-72
+        justify-center 
+        border-4 border-dashed border-[#4C4C4C] 
+        p-4
+      `}>
         <img src={folderMuted} width="200" height="200" />
         <span className="text-[18px] text-[#D9D9D9]">Click or drop...</span>
       </button>
@@ -12,7 +22,6 @@ function UploadForm() {
         flex
         w-full
         items-center
-        mt-auto
       `}>
         <button type="button" className={`
           w-1/2 h-12

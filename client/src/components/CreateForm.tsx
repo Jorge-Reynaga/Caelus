@@ -19,53 +19,51 @@ function CreateForm() {
   };
   
   return (
-    <form className="flex flex-wrap w-full" onSubmit={handleSubmit}>
-      <div className={`
-        flex 
-        w-full
-        m-4 mt-0 
-        items-center
-      `}>
-        <label className={`
-          flex-1 
-          w-1/2 
-          text-[24px] text-[#FFFFFF] text-center
+    <form className="flex flex-col flex-1" onSubmit={handleSubmit}>
+      <div className="flex flex-col flex-1 justify-center gap-12 ml-4 mr-4">
+        <div className={`
+          flex 
+          items-center
         `}>
-          File name
-        </label>
-        <input className={`
-          flex-1 
-          w-1/2 h-12 
-          p-4 bg-[#4C4C4C]
-          text-[18px] text-[#FFFFFF] 
-          rounded-2xl shadow-lg 
-          focus:outline-0
-        `} type="text" name="name" value={formData.name} onChange={handleChange} required />
-      </div>
+          <label className={`
+            flex-1 
+            w-1/2 
+            text-[24px] text-[#FFFFFF] text-center
+          `}>
+            File name
+          </label>
+          <input className={`
+            flex-1 
+            w-1/2 h-12 
+            p-4 bg-[#4C4C4C]
+            text-[18px] text-[#FFFFFF] 
+            rounded-2xl shadow-lg 
+            focus:outline-0
+          `} type="text" name="name" value={formData.name} onChange={handleChange} required />
+        </div>
 
-      <div className={`
-        flex
-        w-full 
-        m-4 
-        items-center
-      `}>
-        <label className={`
-          flex-1 
-          w-1/2 
-          text-[24px] text-[#FFFFFF] text-center
+        <div className={`
+          flex
+          items-center
         `}>
-          File type
-        </label>
-        <select className={`
-          flex-1 
-          w-1/2 h-12 
-          pl-4 pr-4 bg-[#4C4C4C] 
-          text-[18px] text-[#FFFFFF]
-          rounded-2xl shadow-lg
-        `} name="type" value={formData.type} onChange={handleChange}>
-          <option value="Directory">Directory</option>
-          <option value="Text file">Text file</option>
-        </select>
+          <label className={`
+            flex-1 
+            w-1/2 
+            text-[24px] text-[#FFFFFF] text-center
+          `}>
+            File type
+          </label>
+          <select className={`
+            flex-1 
+            w-1/2 h-12 
+            pl-4 pr-4 bg-[#4C4C4C] 
+            text-[18px] text-[#FFFFFF]
+            rounded-2xl shadow-lg
+          `} name="type" value={formData.type} onChange={handleChange}>
+            <option value="Directory">Directory</option>
+            <option value="Text file">Text file</option>
+          </select>
+        </div>
       </div>
 
       <div className={`

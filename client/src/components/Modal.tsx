@@ -17,17 +17,19 @@ function Modal() {
       transition-opacity
     `}>
       <div className={`
-        flex flex-wrap content-start
+        flex flex-col
         w-96 h-96
         bg-[#323232] 
         rounded-4xl shadow-2xl
       `}>
-        <div className="flex w-full h-fit m-4">
+        <div className="flex h-fit m-4">
           <button type="button" className="w-1/2" onClick={() => setTab("create")}>
             <span className={`
               text-[20px] tracking-wide 
               cursor-pointer
-              ${tab === "upload" ? "text-[#4C4C4C] hover:text-[#D9D9D9]" : "text-[#FFFFFF]"}
+              ${
+                tab === "upload" ? "text-[#4C4C4C] hover:text-[#D9D9D9]" : "text-[#FFFFFF]"
+              }
             `}>
               Create
             </span>
@@ -37,7 +39,9 @@ function Modal() {
             <span className={`
               text-[20px] tracking-wide
               cursor-pointer
-              ${tab === "create" ? "text-[#4C4C4C] hover:text-[#D9D9D9]" : "text-[#FFFFFF]"}
+              ${
+                tab === "create" ? "text-[#4C4C4C] hover:text-[#D9D9D9]" : "text-[#FFFFFF]"
+              }
             `}>
               Upload
             </span>
@@ -45,7 +49,7 @@ function Modal() {
         </div>
 
         <div className={`
-          w-full h-0
+          h-0
           ml-4 mr-4 
           border-t-2 border-[#4C4C4C]
         `} />
